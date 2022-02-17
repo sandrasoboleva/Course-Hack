@@ -16,12 +16,16 @@
     "express": "^4.17.2",
     "express-session": "^1.17.2",
     "hbs": "^4.2.0",
+    "lightweight-charts": "^3.8.0",
     "mongoose": "^6.2.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "multer-storage-cloudinary": "^4.0.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
+    "plotly": "^1.0.6",
+    "plotly.js": "^2.9.0",
+    "react-plotly.js": "^2.5.1",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {

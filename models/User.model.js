@@ -1,5 +1,4 @@
-// User Model/Schema
-
+// User validation Schema 
 const {Schema, model} = require("mongoose")
 
 const userSchema = new Schema({
@@ -9,9 +8,12 @@ const userSchema = new Schema({
     required: [true, 'Username is required.'],
     unique: true,
   },
+
+  
   email: {
     type: String,
     required: [true, 'Email is required.'],
+    // match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
     unique: true,
     lowercase: true,
     trim: true,
@@ -23,5 +25,8 @@ const userSchema = new Schema({
 },
 {timestamp: true,}
 )
+
+
+
 
 module.exports = model("User",userSchema)

@@ -1,0 +1,28 @@
+{{#if userInSession}}
+  <h2>Welcome, {{userInSession.username}}!</h2>
+
+
+
+ <form id="logout-form" action="/userAccount/{{userInSession._id}}/edit" , method="GET">
+    <button type="submit">Edit</button>
+  </form>
+   
+  <form id="logout-form" action="/userAccount/{{userInSession._id}}/delete" method="post">
+    <button type="submit">Delete</button>
+  </form>
+   <form id="logout-form" action="/logout" method="POST">
+    <button>Logout</button>
+  </form>
+
+{{!-- Stock List: 
+<select>
+    {{#each StocksList}}
+    <option value="{{@key}}" {{{isSelected ../setStock @key}}}>
+        {{this}}
+    </option>
+    {{/each}}
+</select> --}}
+ 
+{{else}}
+  <p>You are not logged in.</p>
+{{/if}}

@@ -1,0 +1,24 @@
+<div id="form">
+  <h2>Update {{userInSession.username}}'s Account</h2> 
+
+  <form action="/userAccount/{{userInSession._id}}/edit" method="POST">
+
+    <label>
+      Current Username
+      <input type="text" name="username" value="{{userInSession.username}}"/>
+    </label>
+
+    <label>
+      Current Email
+      <input type="email" name="email" value="{{userInSession.email}}"/>
+    </label>
+
+    <button type="submit">Update</button>
+
+
+    {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+  {{/if}}
+  
+  </form>
+</div>

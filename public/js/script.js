@@ -1,7 +1,9 @@
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    console.log("Course-Hack JS imported successfully!");
+    console.log("GuruTrade JS imported successfully!");
   },
   false
 );
+
+

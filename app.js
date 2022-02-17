@@ -16,19 +16,35 @@ const hbs = require("hbs");
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
-require("./config")(app);
+require("./config/index")(app);
+// require("./config/session.config")(app);
 
 // default value for title local
-const projectName = "Course-Hack";
+const projectName = "GuruTrade";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
-
-app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
+// app.use((req, res, next) => {
+//     if (req.session.user) {
+//       User.findById(req.session.user._id).then((user) => {
+//         req.app.locals.globalUser = user;
+//         next();
+//       });
+//     } else {
+//       next();
+//     }
+//   });
 
 // 👇 Start handling routes here
 const index = require("./routes/index");
 app.use("/", index);
 
+// Auth route
+const authRouter = require("./routes/auth.routes");
+app.use("/", authRouter);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
+
+
+
 
 module.exports = app;
